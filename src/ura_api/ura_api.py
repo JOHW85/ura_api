@@ -66,7 +66,7 @@ class ura_api:
     def private_residential_property_transactions(self, batch):
         ret_value = None
         if self._myobj:
-            url = f'{self._base_url}PMI_Resi_Transaction&batch=%s' % batch
+            url = f'{self._base_url}PMI_Resi_Transaction&batch=%s' % str(batch)
             resp = requests.post(url, headers=self._myobj)
             ret_value = resp.json()['Result']
 
